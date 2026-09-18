@@ -24,6 +24,7 @@
   * `SelfBefore32`: detect `$self` usage in pre-3.2 documents (3.2 addition)
   * `TagFieldsBefore32`: detect Tag Object `summary` / `parent` / `kind` usage in pre-3.2 documents (3.2 additions)
   * `ServerNameBefore32`: detect Server Object `name` usage in pre-3.2 documents (3.2 addition)
+  * `ExampleValueFieldsBefore32`: detect Example Object `dataValue` / `serializedValue` usage in pre-3.2 documents (3.2 additions)
 * expose the declared version as `OpenAPI#openapi_version` (a `Gem::Version`, or nil when the field is missing or malformed) so `SpecValidator` rules compare version ranges; a 3.2 document is checked by the 3.1-or-later rules
 * support 3.1-style numeric `exclusiveMinimum` / `exclusiveMaximum` in value validation (standalone bound, not a Boolean modifier on `minimum` / `maximum`)
 * support `type: "null"` (3.1 primitive) in value validation
