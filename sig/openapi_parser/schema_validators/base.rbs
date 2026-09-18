@@ -12,7 +12,8 @@ module OpenAPIParser
         OpenAPIParser::Schemas::Discriminator discriminator, 
         Hash[String, bot] value,
         ?parent_discriminator_schemas: Array[OpenAPIParser::Schemas::Schema]
-      ) -> [Object | nil, OpenAPIParser::OpenAPIError]
+      ) -> [Object | nil, (OpenAPIParser::OpenAPIError | nil)]
+      private def default_mapping_target: (OpenAPIParser::Schemas::Discriminator discriminator) -> (String | nil)
     end
   end
 end
