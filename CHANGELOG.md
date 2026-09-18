@@ -31,6 +31,8 @@
   * `MediaTypesBefore32`: detect `components.mediaTypes` usage in pre-3.2 documents (3.2 addition)
   * `StreamingFieldsBefore32`: detect Media Type `itemSchema` / `itemEncoding` / `prefixEncoding` and nested Encoding Object `encoding` / `itemEncoding` / `prefixEncoding` usage in pre-3.2 documents (3.2 additions)
   * `DefaultMappingBefore32`: detect Discriminator `defaultMapping` usage in pre-3.2 documents (3.2 addition)
+  * `QueryMethodBefore32`: detect Path Item `query` usage in pre-3.2 documents (3.2 addition)
+  * `AdditionalOperationsBefore32`: detect Path Item `additionalOperations` usage in pre-3.2 documents (3.2 addition)
 * expose the declared version as `OpenAPI#openapi_version` (a `Gem::Version`, or nil when the field is missing or malformed) so `SpecValidator` rules compare version ranges; a 3.2 document is checked by the 3.1-or-later rules
 * support 3.1-style numeric `exclusiveMinimum` / `exclusiveMaximum` in value validation (standalone bound, not a Boolean modifier on `minimum` / `maximum`)
 * support `type: "null"` (3.1 primitive) in value validation
@@ -42,6 +44,8 @@
 * support `components.mediaTypes` (OpenAPI 3.2), resolving `$ref`s in request body and response `content` in 3.2 documents; an unresolved one accepts any body unless `strict_reference_validation` is set
 * support `itemSchema` (OpenAPI 3.2) in the parse layer; it is not yet used to validate sequential media type bodies
 * support Discriminator `defaultMapping` (OpenAPI 3.2): fallback schema when the discriminator property is absent or its value has no explicit or implicit mapping; honored in 3.2 documents
+* support the `query` HTTP method and `additionalOperations` (OpenAPI 3.2) on Path Items, including request-operation lookup, in 3.2 documents
+* match HTTP methods case-insensitively in request-operation lookup in 3.2 documents (`request_operation("GET", path)` still returns nil before 3.2)
 
 ## 2.3.1 (2025-11-14)
 * add optional date coercion with behavior matching existing datetime coercion
