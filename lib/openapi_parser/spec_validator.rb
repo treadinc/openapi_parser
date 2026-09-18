@@ -19,6 +19,7 @@ require_relative 'spec_validator/rules/dynamic_anchor_in_30'
 require_relative 'spec_validator/rules/content_schema_in_30'
 require_relative 'spec_validator/rules/self_before_32'
 require_relative 'spec_validator/rules/tag_fields_before_32'
+require_relative 'spec_validator/rules/server_name_before_32'
 
 module OpenAPIParser
   class SpecViolationError < OpenAPIError
@@ -85,6 +86,7 @@ module OpenAPIParser
           Rules::ContentSchemaIn30,
           Rules::SelfBefore32,
           Rules::TagFieldsBefore32,
+          Rules::ServerNameBefore32,
         ]
       end
   end
