@@ -66,4 +66,18 @@ RSpec.describe 'OpenAPIParser 3.2 spec validator (integration)' do
       expect_clean('tag_fields_32.yaml')
     end
   end
+
+  describe 'Server Object name (3.2 addition)' do
+    it 'warns on the version-mismatched document under :warn' do
+      expect_mismatch_warns('server_name_31.yaml', [:server_name_before32])
+    end
+
+    it 'raises SpecViolationError on the version-mismatched document under :raise' do
+      expect_mismatch_raises('server_name_31.yaml', [:server_name_before32])
+    end
+
+    it 'stays clean on the correctly-versioned document' do
+      expect_clean('server_name_32.yaml')
+    end
+  end
 end
