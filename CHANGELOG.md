@@ -1,6 +1,8 @@
 ## Unreleased
 * add OpenAPI 3.2 `SpecValidator` rules
   * `ExampleValueFieldsBefore32`: detect Example Object `dataValue` / `serializedValue` usage in pre-3.2 documents (3.2 additions)
+  * `XmlNodeTypeBefore32`: detect XML Object `nodeType` usage in pre-3.2 documents (3.2 addition)
+  * `XmlAttributeDeprecation` / `XmlWrappedDeprecation`: detect XML Object `attribute: true` / `wrapped: true` in 3.2 documents (deprecated in 3.2 in favor of `nodeType`)
 
 ## 2.5.0 (2026-10-21)
 * add OpenAPI 3.2 `SpecValidator` rules
