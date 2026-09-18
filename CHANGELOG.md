@@ -27,6 +27,7 @@
   * `ExampleValueFieldsBefore32`: detect Example Object `dataValue` / `serializedValue` usage in pre-3.2 documents (3.2 additions)
   * `XmlNodeTypeBefore32`: detect XML Object `nodeType` usage in pre-3.2 documents (3.2 addition)
   * `XmlAttributeDeprecation` / `XmlWrappedDeprecation`: detect XML Object `attribute: true` / `wrapped: true` in 3.2 documents (deprecated in 3.2 in favor of `nodeType`)
+  * `SecuritySchemeFieldsBefore32`: detect Security Scheme `deprecated` / `oauth2MetadataUrl` and the `deviceAuthorization` OAuth flow in pre-3.2 documents (3.2 additions)
 * expose the declared version as `OpenAPI#openapi_version` (a `Gem::Version`, or nil when the field is missing or malformed) so `SpecValidator` rules compare version ranges; a 3.2 document is checked by the 3.1-or-later rules
 * support 3.1-style numeric `exclusiveMinimum` / `exclusiveMaximum` in value validation (standalone bound, not a Boolean modifier on `minimum` / `maximum`)
 * support `type: "null"` (3.1 primitive) in value validation
