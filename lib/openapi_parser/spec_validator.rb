@@ -25,6 +25,7 @@ require_relative 'spec_validator/rules/self_before_32'
 require_relative 'spec_validator/rules/tag_fields_before_32'
 require_relative 'spec_validator/rules/example_value_fields_before_32'
 require_relative 'spec_validator/rules/security_scheme_fields_before_32'
+require_relative 'spec_validator/rules/media_types_before_32'
 
 module OpenAPIParser
   class SpecViolationError < OpenAPIError
@@ -97,6 +98,7 @@ module OpenAPIParser
           Rules::TagFieldsBefore32,
           Rules::ExampleValueFieldsBefore32,
           Rules::SecuritySchemeFieldsBefore32,
+          Rules::MediaTypesBefore32,
         ]
       end
   end
