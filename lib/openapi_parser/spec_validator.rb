@@ -26,6 +26,7 @@ require_relative 'spec_validator/rules/xml_wrapped_deprecation'
 require_relative 'spec_validator/rules/security_scheme_fields_before_32'
 require_relative 'spec_validator/rules/media_types_before_32'
 require_relative 'spec_validator/rules/streaming_fields_before_32'
+require_relative 'spec_validator/rules/default_mapping_before_32'
 
 module OpenAPIParser
   class SpecViolationError < OpenAPIError
@@ -99,6 +100,7 @@ module OpenAPIParser
           Rules::SecuritySchemeFieldsBefore32,
           Rules::MediaTypesBefore32,
           Rules::StreamingFieldsBefore32,
+          Rules::DefaultMappingBefore32,
         ]
       end
   end
