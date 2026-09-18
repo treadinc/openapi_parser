@@ -1,4 +1,6 @@
 ## Unreleased
+* add OpenAPI 3.2 `SpecValidator` rules
+  * `ExampleValueFieldsBefore32`: detect Example Object `dataValue` / `serializedValue` usage in pre-3.2 documents (3.2 additions)
 
 ## 2.5.0 (2026-10-21)
 * add OpenAPI 3.2 `SpecValidator` rules
