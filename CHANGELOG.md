@@ -35,6 +35,7 @@
   * `AdditionalOperationsBefore32`: detect Path Item `additionalOperations` usage in pre-3.2 documents (3.2 addition)
   * `QuerystringBefore32`: detect Parameter `in: querystring` usage in pre-3.2 documents (3.2 addition; not validated at runtime)
   * `CookieStyleBefore32`: detect Parameter `style: cookie` usage in pre-3.2 documents (3.2 addition)
+  * `ResponseSummaryBefore32`: detect Response Object `summary` usage in pre-3.2 documents (3.2 addition)
 * expose the declared version as `OpenAPI#openapi_version` (a `Gem::Version`, or nil when the field is missing or malformed) so `SpecValidator` rules compare version ranges; a 3.2 document is checked by the 3.1-or-later rules
 * support 3.1-style numeric `exclusiveMinimum` / `exclusiveMaximum` in value validation (standalone bound, not a Boolean modifier on `minimum` / `maximum`)
 * support `type: "null"` (3.1 primitive) in value validation
@@ -48,6 +49,7 @@
 * support Discriminator `defaultMapping` (OpenAPI 3.2): fallback schema when the discriminator property is absent or its value has no explicit or implicit mapping; honored in 3.2 documents
 * support the `query` HTTP method and `additionalOperations` (OpenAPI 3.2) on Path Items, including request-operation lookup, in 3.2 documents
 * match HTTP methods case-insensitively in request-operation lookup in 3.2 documents (`request_operation("GET", path)` still returns nil before 3.2)
+* support Response Object `summary` (OpenAPI 3.2) in the parse layer
 
 ## 2.3.1 (2025-11-14)
 * add optional date coercion with behavior matching existing datetime coercion
