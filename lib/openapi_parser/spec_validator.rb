@@ -29,6 +29,7 @@ require_relative 'spec_validator/rules/streaming_fields_before_32'
 require_relative 'spec_validator/rules/default_mapping_before_32'
 require_relative 'spec_validator/rules/query_method_before_32'
 require_relative 'spec_validator/rules/additional_operations_before_32'
+require_relative 'spec_validator/rules/querystring_before_32'
 
 module OpenAPIParser
   class SpecViolationError < OpenAPIError
@@ -105,6 +106,7 @@ module OpenAPIParser
           Rules::DefaultMappingBefore32,
           Rules::QueryMethodBefore32,
           Rules::AdditionalOperationsBefore32,
+          Rules::QuerystringBefore32,
         ]
       end
   end
