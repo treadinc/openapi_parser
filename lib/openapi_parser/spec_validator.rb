@@ -32,6 +32,7 @@ require_relative 'spec_validator/rules/example_value_fields_before_32'
 require_relative 'spec_validator/rules/security_scheme_fields_before_32'
 require_relative 'spec_validator/rules/streaming_fields_before_32'
 require_relative 'spec_validator/rules/querystring_before_32'
+require_relative 'spec_validator/rules/cookie_style_before_32'
 
 module OpenAPIParser
   class SpecViolationError < OpenAPIError
@@ -111,6 +112,7 @@ module OpenAPIParser
           Rules::SecuritySchemeFieldsBefore32,
           Rules::StreamingFieldsBefore32,
           Rules::QuerystringBefore32,
+          Rules::CookieStyleBefore32,
         ]
       end
   end
