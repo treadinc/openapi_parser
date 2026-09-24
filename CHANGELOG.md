@@ -14,6 +14,7 @@
   * `SecuritySchemeFieldsBefore32`: detect Security Scheme `deprecated` / `oauth2MetadataUrl` and the `deviceAuthorization` OAuth flow in pre-3.2 documents (3.2 additions)
   * `StreamingFieldsBefore32`: detect Media Type `itemSchema` / `itemEncoding` / `prefixEncoding` and nested Encoding Object `encoding` / `itemEncoding` / `prefixEncoding` usage in pre-3.2 documents (3.2 additions)
   * `QuerystringBefore32`: detect Parameter `in: querystring` usage in pre-3.2 documents (3.2 addition; not validated at runtime)
+  * `ResponseSummaryBefore32`: detect Response Object `summary` usage in pre-3.2 documents (3.2 addition)
 * return nil from `request_operation` for a document without `paths` (3.1 allows a document with only `webhooks`), instead of raising `NoMethodError`
 * support `$defs` (OpenAPI 3.1) in Schema Objects so `$ref`s into it, such as `#/components/schemas/Pet/$defs/Id`, resolve
 * add `SpecValidator` rule `DefsIn30`: detect `$defs` in 3.0 documents (3.1 addition)
@@ -26,6 +27,7 @@
 * match HTTP methods case-insensitively in request-operation lookup in 3.2 documents (`request_operation("GET", path)` still returns nil before 3.2)
 * accept a file object for array-form `type` with `format: binary` (3.1) when `coerce_value` is off, the same way as a single `type: string`
 * support `itemSchema` (OpenAPI 3.2) in the parse layer; it is not yet used to validate sequential media type bodies
+* support Response Object `summary` (OpenAPI 3.2) in the parse layer
 
 ## 2.5.0 (2026-10-21)
 * add OpenAPI 3.2 `SpecValidator` rules
