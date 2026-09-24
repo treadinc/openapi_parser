@@ -15,6 +15,7 @@
   * `StreamingFieldsBefore32`: detect Media Type `itemSchema` / `itemEncoding` / `prefixEncoding` and nested Encoding Object `encoding` / `itemEncoding` / `prefixEncoding` usage in pre-3.2 documents (3.2 additions)
   * `QuerystringBefore32`: detect Parameter `in: querystring` usage in pre-3.2 documents (3.2 addition; not validated at runtime)
   * `ResponseSummaryBefore32`: detect Response Object `summary` usage in pre-3.2 documents (3.2 addition)
+  * `AllowEmptyValueDeprecation`: detect Parameter `allowEmptyValue` usage in 3.2 documents (deprecated in 3.2)
 * return nil from `request_operation` for a document without `paths` (3.1 allows a document with only `webhooks`), instead of raising `NoMethodError`
 * support `$defs` (OpenAPI 3.1) in Schema Objects so `$ref`s into it, such as `#/components/schemas/Pet/$defs/Id`, resolve
 * add `SpecValidator` rule `DefsIn30`: detect `$defs` in 3.0 documents (3.1 addition)
