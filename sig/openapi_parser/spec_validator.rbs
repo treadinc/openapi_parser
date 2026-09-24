@@ -175,6 +175,10 @@ module OpenAPIParser
       class ResponseSummaryBefore32 < Rule
         def check: (OpenAPIParser::Schemas::OpenAPI root) -> Array[SpecValidator::SpecViolation]
       end
+
+      class AllowEmptyValueDeprecation < Rule
+        def check: (OpenAPIParser::Schemas::OpenAPI root) -> Array[SpecValidator::SpecViolation]
+      end
     end
   end
 
