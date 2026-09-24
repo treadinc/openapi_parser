@@ -13,6 +13,7 @@
   * `AdditionalOperationsBefore32`: detect Path Item `additionalOperations` usage in pre-3.2 documents (3.2 addition)
   * `QuerystringBefore32`: detect Parameter `in: querystring` usage in pre-3.2 documents (3.2 addition; not validated at runtime)
   * `CookieStyleBefore32`: detect Parameter `style: cookie` usage in pre-3.2 documents (3.2 addition)
+  * `ResponseSummaryBefore32`: detect Response Object `summary` usage in pre-3.2 documents (3.2 addition)
 * return nil from `request_operation` for a document without `paths` (3.1 allows a document with only `webhooks`), instead of raising `NoMethodError`
 * validate a value against a schema without `type`: keywords such as `properties`, `required`, `items`, `maxLength`, `enum` and `minimum` now apply when the value has the type the keyword is for, as in JSON Schema. They were all skipped before, so a value that breaks them may now fail validation
 * add `allow_3_2_features` config to apply OpenAPI 3.2 runtime behavior to documents that declare an earlier version (default `false`: pre-3.2 documents behave as before)
@@ -22,6 +23,7 @@
 * support Discriminator `defaultMapping` (OpenAPI 3.2): fallback schema when the discriminator property is absent or its value has no explicit or implicit mapping; honored in 3.2 documents
 * support the `query` HTTP method and `additionalOperations` (OpenAPI 3.2) on Path Items, including request-operation lookup, in 3.2 documents
 * match HTTP methods case-insensitively in request-operation lookup in 3.2 documents (`request_operation("GET", path)` still returns nil before 3.2)
+* support Response Object `summary` (OpenAPI 3.2) in the parse layer
 
 ## 2.5.0 (2026-10-21)
 * add OpenAPI 3.2 `SpecValidator` rules
