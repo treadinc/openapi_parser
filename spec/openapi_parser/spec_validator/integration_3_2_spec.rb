@@ -248,4 +248,18 @@ RSpec.describe 'OpenAPIParser 3.2 spec validator (integration)' do
       expect_clean('response_summary_32.yaml')
     end
   end
+
+  describe 'Parameter allowEmptyValue (deprecated in 3.2)' do
+    it 'warns on the version-mismatched document under :warn' do
+      expect_mismatch_warns('allow_empty_value_32.yaml', [:allow_empty_value_deprecation])
+    end
+
+    it 'raises SpecViolationError on the version-mismatched document under :raise' do
+      expect_mismatch_raises('allow_empty_value_32.yaml', [:allow_empty_value_deprecation])
+    end
+
+    it 'stays clean on the correctly-versioned document' do
+      expect_clean('allow_empty_value_31.yaml')
+    end
+  end
 end
