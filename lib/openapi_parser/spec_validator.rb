@@ -31,6 +31,7 @@ require_relative 'spec_validator/rules/query_method_before_32'
 require_relative 'spec_validator/rules/additional_operations_before_32'
 require_relative 'spec_validator/rules/querystring_before_32'
 require_relative 'spec_validator/rules/cookie_style_before_32'
+require_relative 'spec_validator/rules/response_summary_before_32'
 
 module OpenAPIParser
   class SpecViolationError < OpenAPIError
@@ -109,6 +110,7 @@ module OpenAPIParser
           Rules::AdditionalOperationsBefore32,
           Rules::QuerystringBefore32,
           Rules::CookieStyleBefore32,
+          Rules::ResponseSummaryBefore32,
         ]
       end
   end
