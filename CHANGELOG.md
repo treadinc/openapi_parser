@@ -5,8 +5,10 @@
   * `XmlAttributeDeprecation` / `XmlWrappedDeprecation`: detect XML Object `attribute: true` / `wrapped: true` in 3.2 documents (deprecated in 3.2 in favor of `nodeType`)
   * `SecuritySchemeFieldsBefore32`: detect Security Scheme `deprecated` / `oauth2MetadataUrl` and the `deviceAuthorization` OAuth flow in pre-3.2 documents (3.2 additions)
   * `MediaTypesBefore32`: detect `components.mediaTypes` usage in pre-3.2 documents (3.2 addition)
+  * `StreamingFieldsBefore32`: detect Media Type `itemSchema` / `itemEncoding` / `prefixEncoding` and nested Encoding Object `encoding` / `itemEncoding` / `prefixEncoding` usage in pre-3.2 documents (3.2 additions)
 * add `allow_3_2_features` config to apply OpenAPI 3.2 runtime behavior to documents that declare an earlier version (default `false`: pre-3.2 documents behave as before)
 * support `components.mediaTypes` (OpenAPI 3.2), resolving `$ref`s in request body and response `content` in 3.2 documents; an unresolved one accepts any body unless `strict_reference_validation` is set
+* support `itemSchema` (OpenAPI 3.2) in the parse layer; it is not yet used to validate sequential media type bodies
 
 ## 2.5.0 (2026-10-21)
 * add OpenAPI 3.2 `SpecValidator` rules
