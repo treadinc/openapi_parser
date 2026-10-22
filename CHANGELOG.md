@@ -10,6 +10,7 @@
   * `QueryMethodBefore32`: detect Path Item `query` usage in pre-3.2 documents (3.2 addition)
   * `AdditionalOperationsBefore32`: detect Path Item `additionalOperations` usage in pre-3.2 documents (3.2 addition)
   * `QuerystringBefore32`: detect Parameter `in: querystring` usage in pre-3.2 documents (3.2 addition; not validated at runtime)
+  * `CookieStyleBefore32`: detect Parameter `style: cookie` usage in pre-3.2 documents (3.2 addition)
 * add `allow_3_2_features` config to apply OpenAPI 3.2 runtime behavior to documents that declare an earlier version (default `false`: pre-3.2 documents behave as before)
 * support `components.mediaTypes` (OpenAPI 3.2), resolving `$ref`s in request body and response `content` in 3.2 documents; an unresolved one accepts any body unless `strict_reference_validation` is set
 * support `itemSchema` (OpenAPI 3.2) in the parse layer; it is not yet used to validate sequential media type bodies
