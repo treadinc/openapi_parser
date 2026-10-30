@@ -164,4 +164,18 @@ RSpec.describe 'OpenAPIParser 3.2 spec validator (integration)' do
       expect_clean('streaming_fields_32.yaml')
     end
   end
+
+  describe 'Discriminator defaultMapping (3.2 addition)' do
+    it 'warns on the version-mismatched document under :warn' do
+      expect_mismatch_warns('default_mapping_31.yaml', [:default_mapping_before32])
+    end
+
+    it 'raises SpecViolationError on the version-mismatched document under :raise' do
+      expect_mismatch_raises('default_mapping_31.yaml', [:default_mapping_before32])
+    end
+
+    it 'stays clean on the correctly-versioned document' do
+      expect_clean('default_mapping_32.yaml')
+    end
+  end
 end
